@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Just+Another+Hand|Trirong">
+    <link rel="stylesheet" href="css/styles.css">
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+
+<script src="js/randomQuotes.js"></script>
+<script>
+function nextQuote() {
+  let txt=document.getElementById("text");
+  let auth=document.getElementById("author");
+  let rand=Math.floor(Math.random()*(quotes.length));
+  let twitterLink="https://twitter.com/intent/tweet?hashtags=quotes&amp;text=";
+  let textInApiFormat=quotes[rand].text.replace(/ /g,"%20");
+  twitterLink=twitterLink+textInApiFormat;
+  let authorInApiFormat=quotes[rand].author.replace(/ /g,"%20");
+  twitterLink=twitterLink+" - "+authorInApiFormat;
+  document.getElementById("tweet-quote").href=twitterLink;
+  
+  txt.innerText=quotes[rand].text;
+  auth.innerText=" - "+quotes[rand].author;
+  document.getElementById("rock-pic").src=quotes[rand].pic;
+}
+
+window.onload=init;
+function init() {
+  nextQuote();
+}
+</script> 
+
+<title>Random Quote Machine</title>
+</head>
+<body>
+
+<div id="main">
+  <h1 class="text-center">Random Quote Machine</h1>
+  <div class="main-content">
+     <div id="quote-box">
+        <div id="main-area">
+          <div id="quote-content">
+           <p id="text"></p>
+           <p id="author"></p>
+          </div>
+          <div id="img-part">
+            <img src="" id="rock-pic" height="200"> 
+          </div>
+        </div>
+         <div class="button-area">
+            <button id="new-quote" onclick="nextQuote()" class="btn btn-default">Next Quote</button>
+            <button ><a id="tweet-quote" href="#" target="_blank"  ><i class="fa fa-twitter">&nbsp;Tweet<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Quote</i></a></button>
+         </div>
+     </div>  
+  </div>
+</div>
+      <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    </body>
+</html>
