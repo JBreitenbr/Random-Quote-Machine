@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+    font-family: Trirong, serif;
+  }
+
+body {
+       background: url("paisley.jpg") ;
+      }
+
+h1,h2 {
+      font-size: 64px; 
+      color: white;
+      font-family: "Just Another Hand";
+      padding-top: 5%;
+      padding-bottom: 3%;
+   }
+
+.main-content {
+         margin-left: auto;
+         margin-right: auto;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         text-align: center;
+         width: min(400px,90%);
+         border-radius: 15px;
+         padding: 50px 40px;
+         box-shadow: 0 0 10px;
+         background-color: #E1DBFF;
+         color: #00008B;
+         border: 8px solid #624585;
+       }
+
+#text {
+         font-size: 1.2rem;
+         line-height: 1.5;
+       }
+
+#rock-pic {
+             padding: 20px;
+          }
+
+#main-area {
+             display: flex;
+             align-items: center;
+             justify-content:center;
+             flex-direction: column;
+          }
+
+#author {
+         font-size: 1.2rem;
+         /* text-transform: uppercase; */
+         color: #00008B;
+         margin-top: 10px;
+       }
+
+.button-area {
+     display: flex;
+     justify-content: space-evenly;
+     align-items: center; 
+}
+
+.button-area button {
+     margin-top: 8%;
+     font-family: serif;
+     font-size: 0.9rem;
+     padding: 10px;
+     margin: 15px;
+     border-radius: 5px;
+}
+  
+#new-quote {        
+              border: 2px solid #363636;
+           }
+
+@media screen and (min-width:550px){
+   #main-area {
+      flex-direction: row;
+  }
+  #rock-pic {
+     width: 180px;
+  }
+}
